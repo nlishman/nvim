@@ -10,7 +10,7 @@ return {
         require("mason-lspconfig").setup({
             automatic_installation = true,
             ensure_installed = {
-                "omnisharp", -- ✅ C# LSP
+                "omnisharp",
                 "cssls",
                 "eslint",
                 "html",
@@ -24,13 +24,13 @@ return {
         require("mason-tool-installer").setup({
             ensure_installed = {
                 "prettier",
-                "stylua",  -- Lua formatter
-                "isort",   -- Python formatter
-                "black",   -- Python formatter
+                "stylua",
+                "isort",
+                "black",
                 "pylint",
                 "eslint_d",
-                "csharpier", -- ✅ C# Formatter
-                "netcoredbg", -- ✅ C# Debugger
+                "csharpier",
+                "netcoredbg",
             },
         })
     end,

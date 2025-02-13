@@ -32,8 +32,8 @@ return {
                     capabilities = capabilities,
                 })
             end,
-            ["tsserver"] = function()
-                nvim_lsp["tsserver"].setup({
+            ["ts_ls"] = function()
+                nvim_lsp["ts_ls"].setup({
                     on_attach = on_attach,
                     capabilities = capabilities,
                 })
@@ -76,11 +76,11 @@ return {
             end,
             ["omnisharp"] = function()
                 nvim_lsp["omnisharp"].setup({
+					cmd = { vim.fn.stdpath("data") .. "/mason/bin/OmniSharp" },
                     on_attach = on_attach,
                     capabilities = capabilities,
                     handlers = {
                         ["textDocument/formatting"] = function(_, _, params, client_id, bufnr, done_cb)
-                            -- Use CSharpier for formatting
                             vim.lsp.buf.format({ bufnr = bufnr })
                             done_cb()
                         end,
